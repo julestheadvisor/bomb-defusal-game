@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bomb Defusal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="screen screen-active" id="role-screen" aria-labelledby="role-title">
+      <div class="role-panel">
+        <h1 id="role-title">Choose Your Role</h1>
+        <div class="role-actions">
+          <button class="primary-button" id="defuser-button" type="button">I am the defuser</button>
+          <button class="primary-button secondary-button" id="manual-button" type="button">I am reading instructions</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="defuser-screen" aria-labelledby="timer-label">
+      <header class="defuser-header">
+        <div class="timer" id="timer-label" aria-live="polite">03:00</div>
+        <div class="strike-panel" aria-label="Strikes">
+          <span class="strike-label">Strikes</span>
+          <div class="strike-display" id="strike-display" aria-live="polite">
+            <span class="strike-slot"></span>
+            <span class="strike-slot"></span>
+            <span class="strike-slot"></span>
+          </div>
+        </div>
+        <button class="start-button" id="start-button" type="button">Start</button>
+      </header>
+      <div class="game-overlay" aria-label="Bomb module area">
+        <section class="module" aria-labelledby="wires-title">
+          <header class="module-header">
+            <h2 id="wires-title">Colored Wires</h2>
+            <span class="status-light" id="wires-status" aria-label="Colored wires incomplete"></span>
+          </header>
+          <div class="wire-list" id="wire-list"></div>
+        </section>
+
+        <section class="module" aria-labelledby="dots-title">
+          <header class="module-header">
+            <h2 id="dots-title">Connect the Dots</h2>
+            <span class="status-light" id="dots-status" aria-label="Connect the dots incomplete"></span>
+          </header>
+          <div class="dot-board" id="dot-board">
+            <svg class="dot-lines" id="dot-lines" aria-hidden="true"></svg>
+            <div class="dot-grid" id="dot-grid"></div>
+          </div>
+        </section>
+
+        <section class="module" aria-labelledby="maze-title">
+          <header class="module-header">
+            <h2 id="maze-title">Maze</h2>
+            <span class="status-light" id="maze-status" aria-label="Maze incomplete"></span>
+          </header>
+          <div class="maze-grid" id="maze-grid"></div>
+          <div class="maze-controls" aria-label="Maze movement controls">
+            <button class="maze-button maze-up" data-direction="up" type="button" aria-label="Move up">&uarr;</button>
+            <button class="maze-button maze-left" data-direction="left" type="button" aria-label="Move left">&larr;</button>
+            <button class="maze-button maze-down" data-direction="down" type="button" aria-label="Move down">&darr;</button>
+            <button class="maze-button maze-right" data-direction="right" type="button" aria-label="Move right">&rarr;</button>
+          </div>
+        </section>
+      </div>
+      <div class="game-over-overlay" id="game-over-overlay" role="dialog" aria-modal="true" aria-labelledby="game-over-title">
+        <div class="game-over-panel">
+          <h2 id="game-over-title">Game Over</h2>
+          <p id="game-over-description">Three strikes. The bomb was not defused.</p>
+          <dl class="result-stats" id="result-stats">
+            <div>
+              <dt>Time</dt>
+              <dd id="result-time">00:00</dd>
+            </div>
+            <div>
+              <dt>Strikes</dt>
+              <dd id="result-strikes">0/3</dd>
+            </div>
+          </dl>
+          <button class="restart-button" id="restart-button" type="button">Restart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="manual-screen" aria-labelledby="manual-title">
+      <article class="manual" id="manual-page" aria-live="polite">
+        <p class="manual-page-count" id="manual-page-count"></p>
+        <h1 id="manual-title"></h1>
+        <div class="manual-body" id="manual-body"></div>
+        <div class="manual-arrows" id="manual-arrows" aria-hidden="true">
+          <span class="manual-arrow manual-arrow-left">&larr;</span>
+          <span class="manual-arrow manual-arrow-right">&rarr;</span>
+        </div>
+      </article>
+      <button class="manual-tap-zone manual-left" id="manual-left" type="button" aria-label="Previous manual page"></button>
+      <button class="manual-tap-zone manual-right" id="manual-right" type="button" aria-label="Next manual page"></button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
