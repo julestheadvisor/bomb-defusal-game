@@ -10,6 +10,7 @@ const gameOverTitle = document.querySelector("#game-over-title");
 const gameOverDescription = document.querySelector("#game-over-description");
 const resultTime = document.querySelector("#result-time");
 const resultStrikes = document.querySelector("#result-strikes");
+const groupNumberInput = document.querySelector("#group-number-input");
 const gameOverlay = document.querySelector(".game-overlay");
 const strikeDisplay = document.querySelector("#strike-display");
 const strikeSlots = document.querySelectorAll(".strike-slot");
@@ -423,6 +424,7 @@ function winGame() {
   gameOverDescription.textContent = "All sections were completed successfully.";
   resultTime.textContent = formatTime(timerDurationSeconds - remainingSeconds);
   resultStrikes.textContent = `${strikeCount}/${strikeSlots.length}`;
+  groupNumberInput.value = "";
   defuserScreen.classList.add("game-won");
   startButton.disabled = true;
 
@@ -851,6 +853,7 @@ function initializeGame() {
   defuserScreen.classList.remove("game-lost", "game-won");
   resultTime.textContent = "00:00";
   resultStrikes.textContent = `0/${strikeSlots.length}`;
+  groupNumberInput.value = "";
   updateStrikeDisplay();
   renderWires();
   renderDots();

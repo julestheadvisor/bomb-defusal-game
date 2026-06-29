@@ -280,6 +280,40 @@ button {
   font-weight: 900;
 }
 
+.group-number-field {
+  display: none;
+  gap: 8px;
+  text-align: left;
+}
+
+#defuser-screen.game-won .group-number-field {
+  display: grid;
+}
+
+.group-number-field span {
+  color: #aeb6c4;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.group-number-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 2px solid #34b36f;
+  border-radius: 8px;
+  background: #0f1714;
+  color: #f5f1e8;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.group-number-field input:focus {
+  outline: 3px solid rgba(97, 216, 143, 0.36);
+  outline-offset: 2px;
+}
+
 #defuser-screen.game-won .game-over-panel {
   border-color: #34b36f;
 }
