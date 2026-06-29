@@ -282,8 +282,15 @@ button {
 
 .group-number-field {
   display: none;
-  gap: 8px;
-  text-align: left;
+  gap: 10px;
+  border: 1px solid rgba(97, 216, 143, 0.42);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(52, 179, 111, 0.14), rgba(16, 19, 24, 0.78)),
+    #101318;
+  padding: 12px;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(52, 179, 111, 0.08);
 }
 
 #defuser-screen.game-won .group-number-field {
@@ -291,26 +298,36 @@ button {
 }
 
 .group-number-field span {
-  color: #aeb6c4;
-  font-size: 0.75rem;
+  color: #61d88f;
+  font-size: 0.78rem;
   font-weight: 800;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .group-number-field input {
   width: 100%;
-  min-height: 48px;
-  border: 2px solid #34b36f;
+  min-height: 58px;
+  border: 2px solid rgba(97, 216, 143, 0.72);
   border-radius: 8px;
-  background: #0f1714;
+  background: #07120f;
   color: #f5f1e8;
-  padding: 8px 12px;
-  font-size: 1.2rem;
-  font-weight: 800;
+  padding: 8px 14px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(52, 179, 111, 0.2);
+}
+
+.group-number-field input::placeholder {
+  color: rgba(245, 241, 232, 0.36);
 }
 
 .group-number-field input:focus {
-  outline: 3px solid rgba(97, 216, 143, 0.36);
+  border-color: #61d88f;
+  outline: 3px solid rgba(97, 216, 143, 0.32);
   outline-offset: 2px;
 }
 
@@ -323,7 +340,7 @@ button {
 }
 
 #defuser-screen.game-won .restart-button {
-  background: #24775d;
+  display: none;
 }
 
 .restart-button {
